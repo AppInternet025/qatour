@@ -1,6 +1,6 @@
 // src/app/api/locations/route.js
 import { NextResponse } from 'next/server';
-import { connectToDatabase } from "@/utils/mongodb";
+import { connectToDatabase } from "../../../utils/mongodb";
 import Location from '../../../models/Location';
 // --- GET: Obtener todos los lugares ---
 export async function GET(request) {

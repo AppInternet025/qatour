@@ -1,6 +1,6 @@
 // src/app/api/locations/[id]/route.js
 import { NextResponse } from 'next/server';
-import { connectToDatabase } from "@/utils/mongodb";
+import { connectToDatabase } from "../../../utils/mongodb";
 
 import Location from '../../../../models/Location';
 

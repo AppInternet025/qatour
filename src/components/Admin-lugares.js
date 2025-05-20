@@ -6,8 +6,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
 // Ajusta la ruta si es necesario, pero con @/* debería funcionar
-import MapDisplay from '@/components/MapDisplay';
-
+import MapDisplay from './MapDisplay';
 export default function AdminLugaresClient() {
   const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(true);

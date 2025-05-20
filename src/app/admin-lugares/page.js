@@ -1,4 +1,4 @@
-import {AdminLugaresClient} from "@/components/Admin-lugares";
+import AdminLugaresClient from "../../components/Admin-lugares";
 
 export default function AdminLugares() {
   return (
