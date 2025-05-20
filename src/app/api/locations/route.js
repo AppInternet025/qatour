@@ -26,7 +26,7 @@ export async function POST(request) {
   }
 
   try {
-    await dbConnect();
+    await connectToDatabase();
 
     // Validación básica extra (aunque Mongoose también valida)
     const { name, photoUrl, description, ubi_lat, ubi_lng } = requestBody;

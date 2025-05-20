@@ -77,10 +77,9 @@ export default function AdminLugaresClient() {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                 {/* ... (igual que antes: th para Foto, Nombre, Desc, Lat, Lng, Acciones) ... */}
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Foto</th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Descripción</th> {/* Ocultar en móvil */}
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Descripción</th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitud</th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitud</th>
                 <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
@@ -96,7 +95,6 @@ export default function AdminLugaresClient() {
               ) : (
                 locations.map((location) => (
                   <tr key={location._id}>
-                    {/* ... (igual que antes: td para imagen, datos, botones editar/eliminar) ... */}
                     <td className="px-6 py-4 whitespace-nowrap">
                        <Image
                         src={location.photoUrl || '/placeholder-image.png'}
@@ -105,7 +103,7 @@ export default function AdminLugaresClient() {
                         height={50}
                         className="h-12 w-12 rounded object-cover"
                         onError={(e) => { e.target.onerror = null; e.target.src='/placeholder-image.png'; }}
-                        unoptimized={true} // Considera optimizar si son pocas imágenes o de un dominio conocido
+                        unoptimized={true}
                        />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{location.name}</td>
