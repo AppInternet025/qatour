@@ -5,8 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation'; // ¡Importante: de 'next/navigation'!
 import axios from 'axios';
 import Link from 'next/link';
-import LocationForm from '@/components/LocationForm'; // Ajusta si es necesario
-
+import LocationForm from '../../components/LocationForm';
 export default function AddLocationPage() {
   const router = useRouter();
   const [submitError, setSubmitError] = useState('');

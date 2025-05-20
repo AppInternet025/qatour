@@ -1,12 +1,11 @@
 // src/app/api/locations/route.js
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from "@/utils/mongodb";
-import Location from '@/models/Location'; // Asegúrate que la ruta sea correcta
-
+import Location from '../../../models/Location';
 // --- GET: Obtener todos los lugares ---
 export async function GET(request) {
   try {
-    await dbConnect();
+    await connectToDatabase();
     const locations = await Location.find({}).sort({ createdAt: -1 }); // Ordenar por más reciente
     return NextResponse.json(locations, { status: 200 });
   } catch (error) {

@@ -1,7 +1,9 @@
 // src/app/api/locations/[id]/route.js
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from "@/utils/mongodb";
-import Location from '@/models/Location';
+
+import Location from '../../../../models/Location';
+
 import mongoose from 'mongoose'; // Para validar ObjectId
 
 // --- Helper para validar ObjectId ---
@@ -18,7 +20,7 @@ export async function GET(request, { params }) {
   }
 
   try {
-    await dbConnect();
+    await connectToDatabase();
     const location = await Location.findById(id);
 
     if (!location) {
@@ -48,7 +50,7 @@ export async function PUT(request, { params }) {
    }
 
   try {
-    await dbConnect();
+    await connectToDatabase();
     const location = await Location.findById(id);
 
     if (!location) {
@@ -86,7 +88,7 @@ export async function DELETE(request, { params }) {
   }
 
   try {
-    await dbConnect();
+    await connectToDatabase();
     const deletedLocation = await Location.findByIdAndDelete(id);
 
     if (!deletedLocation) {
