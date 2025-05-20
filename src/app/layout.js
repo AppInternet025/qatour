@@ -6,8 +6,8 @@ import Navbar from "../components/Navbar";
 
 
 export const metadata= {
-  title: "eWave [ Epic Media Wave ]",
-  description: "Marketing Projects Manager",
+  title: "Turismo App",
+  description: "Guia de turistas",
 };
 
 export default function RootLayout({
