@@ -71,6 +71,7 @@ export default function Map() {
               <h3>{selectedCity.name}</h3>
               <p>{selectedCity.description}</p>
               <Comentarios/>
+     
             </div>
           </InfoWindow>
         )}
