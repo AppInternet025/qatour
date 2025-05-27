@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-
+import Comentarios from './Comentarios';
 const containerStyle = {
   width: '100%',
   height: '900px',
@@ -70,18 +70,8 @@ export default function Map() {
             <div style={{ backgroundColor: 'white', padding: '10px', maxWidth: '200px' }}>
               <h3>{selectedCity.name}</h3>
               <p>{selectedCity.description}</p>
-              <ul>
-                {(selectedCity.comments || []).map((c, i) => (
-                  <li key={i}>🗨️ {c}</li>
-                ))}
-              </ul>
-              <input
-                type="text"
-                value={newComment}
-                onChange={(e) => setNewComment(e.target.value)}
-                placeholder="Escribe un comentario"
-              />
-              <button onClick={handleCommentSubmit}>Enviar</button>
+              <Comentarios/>
+     
             </div>
           </InfoWindow>
         )}
